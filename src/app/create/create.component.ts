@@ -17,7 +17,8 @@ export class CreateComponent implements OnInit {
   }
   
   addTutorial(name, url) {
-    this.state.dispatch(new TutorialActions.AddTutorial({name: name, url: url}));
+    const setData = new TutorialActions.AddTutorial({name: name, url: url})
+    this.state.dispatch(setData);
   }
 
 }
