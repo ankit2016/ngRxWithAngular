@@ -4,6 +4,8 @@ import { AppState } from './../app.state';
 import { Tutorial } from './../models/tutorial.model'
 import * as TutorialActions from './../actions/tutorial.action';
 
+import * as userActions from './../actions/users.action';
+
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -15,10 +17,12 @@ export class CreateComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   addTutorial(name, url) {
-    const setData = new TutorialActions.AddTutorial({name: name, url: url})
+    const setData = new TutorialActions.AddTutorial({name: name, url: url, data: [1,2,3]});
     this.state.dispatch(setData);
+    // const setUserData = new userActions.add_users({name: name, url: url, data: [1,2,3]});
+    // this.state.dispatch(setUserData);
   }
 
 }

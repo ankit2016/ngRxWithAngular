@@ -1,9 +1,13 @@
-<div class="right" *ngIf="tutorials">
+<div class="right">
 
   <h3>Tutorials</h3>
   <ul>
     <li *ngFor="let tutorial of tutorials; let i = index" (click)="remove(i)">
       <a>{{ tutorial.name }}</a>
     </li>
+    <li *ngIf="tutorials.length == 0">No Data Found!</li>
   </ul>
 </div>
+
+
+
